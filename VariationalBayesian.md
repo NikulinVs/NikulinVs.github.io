@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Test math"
+author: Vsevolod
+category: misc
+tags: [test]
+use_math: true
+---
+
 # EM Algorithm and Variational Bayesian Inference
 
 Here I provide a concise description of the general idea of the methods.
