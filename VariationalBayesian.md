@@ -1,3 +1,4 @@
+{% include head.html %}
 
 # EM Algorithm and Variational Bayesian Inference
 
