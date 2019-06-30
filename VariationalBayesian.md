@@ -33,11 +33,7 @@ Then, simply find the distribution $p(x \vert \theta^*)$ in our statistical mode
 from $q(x)$ (Later I will write a post about different divergences as measures of dissimilarity between
 distributions and why we typically choose KL-divergence).
 
-$$
-\theta^* = \substack{\text{argmin} \\ {\theta}}{D_{KL}(q(x) \vert \vert p(x \vert \theta^*))}
-$$
-
-![Schematic depiction of the relation between empirical distribution $q(x)$ and statistical model $p(x \vert \theta)$](kl_no_hidden.pdf)
+![Schematic depiction of the relation between empirical distribution $q(x)$ and statistical model $p(x \vert \theta)$]({{ site.url }}/kl_no_hidden.pdf)
 
 So far we have
 
