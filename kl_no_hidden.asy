@@ -1,4 +1,4 @@
-settings.outformat="eps";
+settings.outformat="svg";
 size(8cm);
 
 draw(ellipse((0,0), 1.5, 0.5));
