@@ -122,7 +122,7 @@ $$
 D_{KL}(\widetilde{Q} \vert \vert P_{\theta}) \approx -\frac{1}{N} \sum_{k=1}^N{\log{p_{\theta}(x_k)}} + Const
 $$
 
-![Schematic depiction of the relation between empirical distribution $q(x)$ and statistical model $p(x \vert \theta)$]({{ site }}/kl_no_hidden.pdf)
+![Schematic depiction of the relation between empirical distribution $q(x)$ and statistical model $p(x \vert \theta)$](kl_no_hidden.eps)
 
 Conclusion: minimization of KL-divergence of desired distribution from the corrected empirical distribution
 is equivalent to maximization of log-likelihood.
