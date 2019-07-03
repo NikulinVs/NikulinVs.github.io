@@ -39,9 +39,9 @@ Typically, these models are parametrized with a real-valued vector of parameters
 Our goal is to find an algorithm that estimates $\mathbf{\theta}$ based on given data.
 
 We have a family of distributions $P_{\theta}(A)$. Our goal is to choose "the best" one.
-What should we do? Firstly, let's consider a wider family of probability distributions.
+Firstly, let's consider a wider family of probability distributions.
 Namely, all possible probability measures over $(X, \Sigma)$.
-Then, the best distribution which fits our data is the average of Dirac measures $\delta_{x_k}(A)$
+The best distribution which fits our data is the average of Dirac measures $\delta_{x_k}(A)$
 centered at sample point. This distribution is called *empirical distribution* of data or *observed point*:
 
 $$
@@ -75,7 +75,7 @@ $$
 \widetilde{\delta}_{x_k}(A) = \frac{1}{\mu(B_{x_k, \epsilon})} \mu(A \cap B_{x_k, \epsilon})
 $$
 
-Also worth to notice that $\widetilde{Q}$ is absolute continuous with respect to $\mu$. And,
+Also worth to notice that $\widetilde{Q}$ is absolute continuous with respect to $\mu$. And
 by Radon-Nicodym theorem could be written as
 
 $$
@@ -94,28 +94,17 @@ $$
 $$
 
 So $\widetilde{q}$ is a pdf for $\widetilde{Q}$.
-Finally, we can define Radon-Nikodym derivative $\frac{d\widetilde{Q}}{dP_{\theta}}$. By definition, it is a function $f(x)$ with the property
+Finally, we can define Radon-Nikodym derivative $\frac{d\widetilde{Q}}{dP_{\theta}}$:
 
 $$
-\widetilde{Q}(A) = \int_{A}{f(x)dP_{\theta}(x)} = \int_{A}{f(x)p_{\theta}d\mu(x)}
-$$
-
-It is easy to see that
-
-$$
-\frac{d\widetilde{Q}}{dP_{\theta}}(x) = f(x) = \left\{
-                \begin{array}{ll}
-                  \frac{1}{Np_{\theta}(x)\mu(B_{x_k, \epsilon})}\text{,  }x \in B_{x_k, \epsilon}\text{ for some }k,\\
-                  0\text{, otherwise}
-                \end{array}
-              \right.
+\frac{d\widetilde{Q}}{dP_{\theta}} = \frac{\widetilde{q}(x)}{p_{\theta}(x)}
 $$
 
 Now we can write KL-divergence $D_{KL}(\widetilde{Q} \vert \vert P_{\theta})$
 
 $$
 \begin{aligned}
-D_{KL}(\widetilde{Q} \vert \vert P_{\theta}) &= \int_{X}{\log{\frac{d\widetilde{Q}}{dP_{\theta}(x)}} d\widetilde{Q}(x)} \\
+D_{KL}(\widetilde{Q} \vert \vert P_{\theta}) &= \int_{X}{\log{\frac{d\widetilde{Q}(x)}{dP_{\theta}(x)}} d\widetilde{Q}(x)} \\
 &= \frac{1}{N\mu(B_{x_k, \epsilon})}\sum_{k=1}^N{\int_{B_{x_k, \epsilon}}{\log{\frac{1}{Np_{\theta}(x)\mu(B_{x_k, \epsilon})}}d\mu(x)}} \\
 &= -\frac{1}{N}\sum_{k=1}^N{\frac{1}{\mu(B_{x_k, \epsilon})}\int_{B_{x_k, \epsilon}}{\log{p_{\theta}(x)}d\mu(x)}} + Const
 \end{aligned}
