@@ -145,7 +145,12 @@ Define a statistical model (family of distributions) $P^{\theta}(A)$ acting on
 $(X \times Z, \Sigma_x \otimes \Sigma_z)$. Our goal is, again, pick "the best"
 distribution from this model based only on $x_k$ part of samples.
 
-We want to define a corrected empirical distribution $\widetilde{Q}(A)$ in the similar way to the previous section. Decompose $\widetilde{Q}(A)$ using marginal distribution $\widetilde{Q}_X(E_x) = \widetilde{Q} \circ \pi_X^{-1}$ defined on $(X, \Sigma_x)$ and family of conditional distributions $\widetilde{Q}_{Z \vert x}(E_z)$ parametrized by points from $X$ and defined on $(Z, \Sigma_z)$. All these probability measures are absolute continuous with respect to their corresponding reference measures and have pdfs.
+We want to define a corrected empirical distribution $\widetilde{Q}(A)$ in the similar way to the previous section.
+Decompose $\widetilde{Q}(A)$ using marginal distribution $\widetilde{Q}_{X}(E_x) = \widetilde{Q} \circ \pi_X^{-1}$
+defined on $(X, \Sigma_x)$ and family of conditional distributions $\widetilde{Q}_{Z \vert x}(E_z)$
+parametrized by points from $X$ and defined on $(Z, \Sigma_z)$.
+All these probability measures are absolute continuous with respect to their corresponding
+reference measures and have pdfs.
 
 $$
 \widetilde{Q}_X(A_x) = \int_{A_x}{\widetilde{q}_X(x)d\mu_X(x)}
