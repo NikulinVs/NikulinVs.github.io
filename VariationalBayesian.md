@@ -224,7 +224,7 @@ D_{KL}(\widetilde{Q} \vert \vert P^{\theta}) &= \frac{1}{N}\sum_{k=1}^N{\int_{Z}
 \end{aligned}
 $$
 
-From here we can see that $\widetilde{q}_Z(z \vert x_k) = p_{\theta}(z \vert x_k)$ minimizes this expression
+From here we can see that $\widetilde{q}\_Z(z \vert x_k) = p_{\theta}(z \vert x_k)$ minimizes this expression
 and further minimization with respect to $\theta$ leads to the same solution as
 maximization of marginal log likelihood of desired distribution. However direct maximization of
 $\sum_{k=1}^{N}{\log{p_{\theta}(x_k)}}$ may not be tractable. We can expand expression for
@@ -237,7 +237,7 @@ D_{KL}(\widetilde{Q} \vert \vert P^{\theta}) &= \frac{1}{N}\sum_{k=1}^N{\int_{Z}
 \end{aligned}
 $$
 
-If $\widetilde{q}_Z(z \vert x_k)$ stays fixed, we can maximize
+If $\widetilde{q}\_Z(z \vert x_k)$ stays fixed, we can maximize
 $\mathbb{E}_{\widetilde{q}_Z(z \vert x_k)}[\log{p_{\theta}(x_k, z)}]$ either analytically or by Monte-Carlo
 sampling from $\widetilde{q}_Z(z \vert x_k)$ and solving regular inference problem from samples $(x_k, z_k)$.
 
@@ -245,7 +245,7 @@ Finaly we arrive to the algorithm itself:
 
 1. Initialize $\theta_0$, $t = 0$.
 2. Fix $\widetilde{q}_Z(z \vert x_k) = p_{\theta_t}(z \vert x_k)$.
-3. Solve $\theta_{t+1} = \mathop{\text{argmax}}_{\theta}{\mathbb{E}_{\widetilde{q}_Z(z \vert x_k)}[\log{p_{\theta}(x_k, z)}]}$.
+3. Solve $\theta_{t+1} = \mathop{\text{argmax}}\_{\theta}{\mathbb{E}_{\widetilde{q}_Z(z \vert x_k)}[\log{p_{\theta}(x_k, z)}]}$.
 4. If $\vert \theta_{t+1} - \theta_{t} \vert < \epsilon$ then stop, else go to step 2.
 
 Notice, for each step we never increase the value of $D_{KL}(\widetilde{Q} \vert \vert P^{\theta})$.
